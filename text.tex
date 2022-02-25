@@ -1,0 +1,206 @@
+\documentclass{template/template}
+
+%\renewcommand{\familydefault}{\sfdefault} %% Only if the base font of the document is to be sans serif
+%\usepackage{bera}
+
+\usepackage[T1]{fontenc} % evropské uvozovky
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{gensymb} % balíček symbolů
+\usepackage{booktabs}
+%\usepackage{lmodern}
+\usepackage{csquotes} % text lze uvést do uvozovek pomocí \enquote{text}
+\usepackage{textcomp}
+
+\usepackage[toc,page]{appendix}
+\usepackage{color} % balíček pro obarvování textů
+\usepackage{xcolor}  % zapne možnost používání barev, mj. pro \definecolor
+\definecolor{mygreen}{RGB}{0,153,153} % nastavení barev odkazů 
+\definecolor{myblue}{RGB}{0,0,200} 
+\definecolor{commentgreen}{RGB}{0,100,0} % nastavení barev pro příklady z C++
+\definecolor{deepblue}{rgb}{0,0,0.7}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\usepackage{listings} % balíček pro formátování zdrojových kódů 
+\usepackage[author=,status=draft]{fixme} % vkládání poznámek  
+% dva módy (status): draft (poznámky se zobrazují v PDF) / final (poznámky se nezobrazují v PDF)
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{float}
+
+
+\usepackage[T1]{fontenc} % import tučného písma typu tt pro prostředí listings
+%\usepackage{listings} % balíček pro obarvování syntaxe ukázek programů v textu
+\usepackage{listingsutf8} %nutné pro \usepackage{listings} aby to jelo v UTF-8
+\lstset{
+	extendedchars 	= false,
+	language      	= C++,
+	basicstyle      = \ttfamily,
+	keywordstyle     = \bfseries,
+	%identifierstyle = \color{brown},
+	commentstyle    = \color{commentgreen},
+	otherkeywords	= {self},             % Add keywords here
+	emphstyle		= \color{deepred},    % Custom highlighting style
+	stringstyle	 	= \color{deepgreen},		
+	keywordstyle	=\color{deepblue},
+	stringstyle     = \color{magenta},
+} % písmo a  barvičky  by možná chtěly doladit - nějaký dobrovolník? 
+% volba literate= pro znaky s diakritikou z kódů se zvýrazněnou syntaxí se nesmí používat, rozbíjí překlad
+
+% \begin{lstlisting} Tady je zdrojový kód např. v C++ \end{lstlisting} - pro UTF-8 NE
+%\lstinputlisting{source_filename.py} vloží soubor z daného místa a obarví
+
+\usepackage{hyperref} % balíček pro hypertextové odkazy
+% \url{www.odkaz.cz}
+% \href{http://www.odkaz.cz}{Text který bude jako odkaz}
+%\hyperlink{label}{proklikávací_text} - odkaz na text 
+% \hypertarget{label}{cíl_odkazu} - cíl odkazu  
+
+
+\hypersetup{colorlinks=true, linkcolor=myblue, urlcolor=mygreen, citecolor=blue, anchorcolor = magenta,
+	linktocpage = true, frenchlinks } % nastavení barvy odkazů 
+% bookmarksopen=true, bookmarksnumbered=true, bookmarksopenlevel=1 - nastavuje rozbalování levého menu       
+
+
+
+
+
+%\usepackage{expl3} % bibtex dependency, must be loaded prior to the bibtex
+%\usepackage[backend=bibtex,bibstyle=numeric,sorting=none,date=long,dateabbrev=false,texencoding=utf8,bibencoding=utf8,style=iso-numeric]{biblatex}
+
+\usepackage[a4paper]{geometry}
+
+%\lstset { 
+%    language=C++,
+%    backgroundcolor=\color{black!5}, % set backgroundcolor
+%    basicstyle=\footnotesize,% basic font setting
+%}
+
+%\addbibresource{text.bib}
+%\nocite{*}
+
+\titlecz{Párty světla} % Název práce
+\author{Anna Králová} % Jméno autora
+\institution{STŘEDNÍ PRŮMYSLOVÁ A~VYŠŠÍ ODBORNÁ ŠKOLA BRNO, Sokolská 1} % Celý název instituce
+\institutiontype{příspěvková organizace} % Typ instituce
+\thesistype{maturitní práce}  % Typ práce/dokumentu
+\mentor{Mgr. Miroslav Burda} % Jméno vedoucího práce
+%\mentorstatement{Ing. Václava Zavadila} % Jméno vedoucího práce ve čtvrtém pádě
+
+% Newly added
+\authorname{Anna}
+\authorsurname{Králová}
+\schoolyear{2021/2022}
+\field{Technické Lyceum} % Studijní obor
+\class{L4A}
+
+\placefooter{Brno 2021}
+
+% \usepackage{hyperref} % balíček pro hypertextové odkazy
+% \url{www.odkaz.cz}
+% \href{http://www.odkaz.cz}{Text který bude jako odkaz}
+% \hyperlink{label}{proklikávací_text} - odkaz na text 
+% \hypertarget{label}{cíl_odkazu} - cíl odkazu 
+
+%%% Přepínač pracovní kopie
+%\workcopytrue
+\workcopyfalse
+
+%\renewcommand\bibname{Literatura a zdroje}
+
+\begin{document}
+\hyphenation{SOLIDWORKS Solid/-Works}
+
+\newgeometry{margin=2cm, top=3cm, bottom=2.5cm, left=2.5cm, includefoot}
+
+\maketitle
+
+\newgeometry{margin=2cm, top=2.5cm, bottom=2.5cm, left=2.5cm, right=2cm, includefoot}
+
+\makecopyrightstatement{V~Brně}
+
+
+
+\pagestyle{empty}
+
+\section*{Zadání}
+
+Cílem dlouhodobé maturitní práce je návrh svítící dekorace pro vnitřní použití a její výroba
+v počtu
+alespoň tří kusů. Dekorace bude dálkově ovladatelná, bude umožňovat
+měnit barvy světla
+a bude vhodně esteticky ztvárněná.
+Dekorace bude schopna delšího provozu (jednotky hodin) i bez
+přívodu energie z vnějšího zdroje. %todo kolik hodin ? 
+
+
+%\subsection*
+
+\vspace{20mm}
+
+%\section*
+
+%\subsection*
+
+\newpage
+\pagestyle{plain}
+
+\tableofcontents % vysází obsah
+
+\setlength{\parskip}{0.4em}
+
+%%% Začátek práce
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\newpage
+
+% Úvod práce
+\input{CHAPTERS/01-UVOD.tex}
+
+\input{CHAPTERS/02-ELEKTRONIKA.tex}
+
+\input{CHAPTERS/03-OVLADANI.tex}
+
+\input{CHAPTERS/04-PROGRAM.tex}
+
+\input{CHAPTERS/05-ODLIVANI.tex}
+
+\input{CHAPTERS/06-KRABICKA.tex}
+
+\input{CHAPTERS/10-ZAVER.tex}
+
+\clearpage
+\phantomsection
+
+%\appendix
+%\addcontentsline{toc}{chapter}{Přílohy}
+
+% Prilohy
+%\input{CHAPTERS/100 - PRILOHY.tex}
+
+\input literatura.tex
+
+
+\listoffigures
+\addcontentsline{toc}{chapter}{Seznam obrázků}
+
+\newpage
+
+\chapter*{Obrazová příloha}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1.0
+	\textwidth]{img/06zakl/hotovo.jpg}
+	\caption{Hotový výrobek}
+	%	\label{fig:install-sdk-3}
+\end{figure}
+
+%\listoftables
+%\addcontentsline{toc}{chapter}{Seznam tabulek}
+
+\end{document}
+
+%todo příloha program 

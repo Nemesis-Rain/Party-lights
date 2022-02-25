@@ -1,0 +1,90 @@
+\chapter{Základna}
+%Základna Jako poslední část jsem potřebovala krabičku – nějakou základnu, která by sjednotila jednotlivé komponenty do jednoho kompletního celku. 
+Jako poslední už mi zbývalo jen udělat základnu, nebo také krabičku, do které bych mohla schovat elektrický obvod, a na její víko umístit růži.
+Rozměry krabičky byly designované podle nejrozměrnější komponenty v elektrickém obvodu, jednalo se o držák s bateriemi, jehož rozměry jsou 75~mm x 42~mm x 20~mm. Druhou největší komponenta byla deska \textit{ESP32-DevKitC} s rozměry: 55m~m x 30~mm s~výškou 10~mm.
+Podle výše zmíněných dvou nevětších komponent byly stanoveny přibližné vnitřní rozměry základny: 82~mm x 82~mm x 45~mm, které zaručovaly, že se do základny vejde jak \textit{ESP32-DevKitC} tak baterie, zůstane nějaká rezerva na kabely a další komponenty a základna nebude o moc větší než růže.  
+Aby byla ověřena správnost rozměrů, byl podle nich vytvořen první prototyp.
+%abych ověřila správnost rozměrů, rozhodla jsem se podle nich vytvořit první prototyp.
+%82 mm x 82 mm x 45 mm,
+
+
+
+\section{První prototyp}
+První prototyp byl vyroben ručně ze 4~mm široké překližky. Podle toho se poté přibližně odvodily vnější rozměry základny. U tohoto prototypu to přibližně bylo: 90 x 90 x 50~mm. Tato práce nebyla profesionální, proto se výsledné rozměry základny nepatrně lišily (+/-2~mm).
+%jsem vyrobila ručně
+
+Pro výrobu prototypu bylo z překližky vyřezáno šest dílů: Vrchní a spodní díl 90~mm x 90~mm a čtyři boční stěny o rozměrech 45 x 90~mm a 45 x 82~mm. Do vrchního dílu byl vyřezán kruhový otvor o průměru 28~mm, pro umístění odlité růže a do jednoho bočního dílu byl vyvrtán vrtačkou otvor pro menší přepínací tlačítko. Do rohů byly přilepeny lepidlem \textit{Herkules} špalíčky 10~x~10~mm, které držely všechny desky základny u sebe a později sloužily pro držení vrchního dílu a růží pomocí šroubků. Takže se vrchní díl s růží mohl kdykoliv sundat a bylo možné manipulovat s elektrotechnikou uvnitř.
+
+%todo jak je to s přívlastky? 
+%Dva čtverce o šířce přibližně 90 mm
+%2 obdélníky o výšce 45 mm a délce 90
+%2 obdélníky o výšce 45 mm a délce 82
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[b]{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{img/06zakl/Amazakladna.jpg}
+		\caption{První prototyp}
+		%		\label{fig:gear-sketch1}
+	\end{minipage}
+	\qquad
+	\begin{minipage}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{img/06zakl/1prototypele.jpg}
+		\caption{Kompletní  prototyp}
+		%		\label{fig:gear-sketch2}
+	\end{minipage}
+\end{figure}
+
+Po sestavení krabičky byl pro kontrolu do krabičky vložen náš elektrický obvod.
+Jelikož pokus s prvním prototypem proběhl úspěšně, začala jsem pracovat na dokonalejším druhém prototypu.
+
+
+\section{Druhý prototyp }
+Druhý prototyp základny byl také vyroben ze dřeva, tentokrát ale byly jednotlivé stěny krabičky vypáleny na laseru. Díky čemuž prototyp působil profesionálněji. Při této výrobě byla použita překližky o síle 3~mm. Jednotlivé díly krabičky byly navrženy v~programu \textit{MakerCaser} \cite{makercase}, který po zadání vnitřních rozměrů a tloušťky překližky vygeneroval výkres hotové krabičky i s hotovými okrajovými zámky, aby se do rohů prototypu tentokrát nemusely lepit špalíčky. 
+
+\subsection*{Práce s Lightburnem}
+\textit{Lightburn} \cite{lightburn} je placený editační software, který škola používá pro práci s laserovými řezačkami. 
+Stačilo do tohoto programu pouze nahrát uložený soubor ze stránky \textit{MakerCaser}, přidat otvor ve vrchním dílu a logo školy. Poté stačilo upravený soubor nahrát ve formátu \textit{.svg} do školní laserové tiskárny a krabičku vypálit. Výsledek působil reprezentativně, takže se nakonec na laseru vypálily i krabičky pro zbývající výrobky. 
+ %Jinak zbytek ostatní  zůstal beze změny.
+
+
+%todo *Obrázek*
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{img/06zakl/LightBurn_ukazka.jpg}
+	\caption{Prostředí LightBurn}
+	%	\label{fig:install-sdk-3}
+\end{figure}
+
+\subsection*{Vložení elektrotechniky a růže do krabičky}
+Krabičky pak byly složeny do své finální podoby a jejich rohy byly zpevněny lepidlem \textit{Herkules}, aby krabičky lépe držely pohromadě. Jediný kus, který nebyl přilepen, byl vrchní díl s růží, aby se kdykoliv v případě potřeby mohl sundat. 
+
+
+Poté byl vložen elektrický obvod. Přepínač byl upevněn do otvoru na tlačítko, do základny byl položen opatrně držák s bateriemi a \textit{ESP32-DevKitC} byl umístěn na kousek polystyrenu, aby v krabičce jen tak neležel a nepohyboval se. 
+%Todo lépe zdůvodnit ten polystyren, kabely byli douhé. (nevhodně ustřižené)
+Ohebný LED pásek byl opatrně ohnut do obloučku a vložen do otvoru v růži. Poté bylo opatrně přiděláno vrchní víko a bylo hotovo. 
+%todo nevím jak to zakončit. 
+
+%\enlargethispage{1}
+
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=1.1\textwidth]{img/06zakl/Box.jpg}
+		\caption{2. prototyp}
+		%		\label{fig:gear-sketch1}
+	\end{minipage}
+	\qquad
+	\begin{minipage}[b]{0.45\textwidth}
+		\centering
+		\includegraphics[width=1.01\textwidth]{img/06zakl/2prototypele2.jpg}
+		\caption{2. prototyp s elektronikou}
+		%		\label{fig:gear-sketch2}
+	\end{minipage}
+\end{figure}
+
+
+\newpage

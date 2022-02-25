@@ -1,2 +1,2 @@
-# Party-lights
-My graduating work
+# School-Project
+School-project
